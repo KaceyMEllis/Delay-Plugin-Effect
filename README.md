@@ -30,7 +30,7 @@ Plugin Formats & Hosting: Built and tested as both a standalone application and 
 Code Organization: Modular design separating processor (DSP/audio logic), editor (GUI), and parameter layout definitions for maintainability and scalability.
 
 Future Improvements:
-Tap tempo function
-Feedback rate control
-Analog style high frequency roll-off
-Improved UI
+Tap tempo function,
+Feedback rate control,
+Analog style high frequency roll-off,
+Improved UI,
