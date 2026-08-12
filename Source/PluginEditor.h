@@ -12,6 +12,7 @@
 #include "PluginProcessor.h"
 #include "Parameters.h"
 #include "RotaryKnob.h"
+#include "LookAndFeel.h"
 //==============================================================================
 /**
 */
@@ -29,6 +30,9 @@ private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     DelayAudioProcessor& audioProcessor;
+    
+    // Adds three GroupComponent objects
+    juce::GroupComponent delayGroup, feedbackGroup, outputGroup;
     
     RotaryKnob gainKnob { "Gain", audioProcessor.apvts, gainParamID };
     RotaryKnob mixKnob { "Mix", audioProcessor.apvts, mixParamID};
