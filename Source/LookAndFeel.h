@@ -48,4 +48,5 @@ class RotaryKnobLookAndFeel: public juce::LookAndFeel_V4
     
     private:
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(RotaryKnobLookAndFeel)
+        juce::DropShadow dropShadow {Colors::Knob::dropShadow, 6, { 0,3}};
 };
