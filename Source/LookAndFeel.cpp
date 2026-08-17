@@ -10,10 +10,25 @@
 
 #include "LookAndFeel.h"
 
+//Create typeface variable
+const juce::Typeface::Ptr Fonts::typeface = juce::Typeface::createSystemTypefaceFor(BinaryData::GoldmanRegular_ttf, BinaryData::GoldmanRegular_ttfSize);
+
+juce::Font Fonts::getFont(float height)
+{
+    return juce::FontOptions(typeface)
+    .withHeight(height);
+}
+
 RotaryKnobLookAndFeel::RotaryKnobLookAndFeel()
 {
     setColour(juce::Label::textColourId, Colors::Knob::label);
     setColour(juce::Slider::textBoxTextColourId, Colors::Knob::label);
+    setColour(juce::Slider::rotarySliderFillColourId, Colors::Knob::trackActive);
+}
+
+juce::Font RotaryKnobLookAndFeel::getLabelFont([[maybe_unused]] juce::Label& label)
+{
+    return Fonts::getFont();
 }
 
 void RotaryKnobLookAndFeel::drawRotarySlider(juce::Graphics &g, int x, int y, int width,
@@ -87,7 +102,19 @@ void RotaryKnobLookAndFeel::drawRotarySlider(juce::Graphics &g, int x, int y, in
                                fromAngle,
                                toAngle,
                                true);
-    g.setColour(Colors::Knob::trackActive);
+    g.setColour(slider.findColour(juce::Slider::rotarySliderFillColourId));
     g.strokePath(valueArc, strokeType);
     }
 }
+
+MainLookAndFeel::MainLookAndFeel()
+{
+    setColour(juce::GroupComponent::textColourId, Colors::Group::label);
+    setColour(juce::GroupComponent::outlineColourId, Colors::Group::outline);
+}
+
+juce::Font MainLookAndFeel::getLabelFont(juce::Label&)
+{
+    return Fonts::getFont();
+}
+
