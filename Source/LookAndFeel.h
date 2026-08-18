@@ -62,7 +62,14 @@ class RotaryKnobLookAndFeel: public juce::LookAndFeel_V4
         void drawRotarySlider(juce::Graphics& g, int x, int y, int width, int height,
                               float sliderPos, float rotaryStartAngle, float rotaryEndAngle, juce::Slider& slider) override;
         
-        juce::Font getLabelFont(juce::Label&) override;
+    void drawTextEditorOutline(juce::Graphics&, int, int, juce::TextEditor&) override { }
+    
+    juce::Font getLabelFont(juce::Label&) override;
+    
+    juce::Label* createSliderTextBox(juce::Slider&) override;
+    
+    void fillTextEditorBackground(juce::Graphics&, int width, int height, juce::TextEditor&) override;
+    
     private:
         JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(RotaryKnobLookAndFeel)
         juce::DropShadow dropShadow {Colors::Knob::dropShadow, 6, { 0,3}};
