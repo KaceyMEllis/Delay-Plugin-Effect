@@ -11,6 +11,8 @@
             file="../../../Downloads/Goldman/Goldman-Regular.ttf"/>
     </GROUP>
     <GROUP id="{29DC4859-EAB7-E7FC-5A1E-A0E7D0F52AD5}" name="Source">
+      <FILE id="qB8yqS" name="ProtectYourEars.h" compile="0" resource="0"
+            file="Source/ProtectYourEars.h"/>
       <FILE id="lviDKV" name="Parameters.cpp" compile="1" resource="0" file="Source/Parameters.cpp"/>
       <FILE id="rjd98i" name="Parameters.h" compile="0" resource="0" file="Source/Parameters.h"/>
       <FILE id="pic7gq" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -47,7 +49,7 @@
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"
                JUCE_WEB_BROWSER="1"/>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX">
+    <XCODE_MAC targetFolder="Builds/MacOSX" xcodeValidArchs="arm64,arm64e,i386,x86_64">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="Delay" recommendedWarnings="LLVM"
                        enablePluginBinaryCopyStep="1"/>
