@@ -61,6 +61,10 @@ private:
     //AudioProcessorValueTreeState object
     Parameters params;
     
+    //0.0 value is only assigned at creation. State recalls previous values. Needed because values aren't used until next iteration of loop.
+    float feedbackL = 0.0f;
+    float feedbackR = 0.0f;
+    
     juce::dsp::DelayLine<float, juce::dsp::DelayLineInterpolationTypes::Linear> delayLine;
     //Helper function that creates the plug-in parameter objects that will be added to apvts
     //==============================================================================
