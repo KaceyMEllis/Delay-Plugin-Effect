@@ -11,6 +11,7 @@
             file="../../../Downloads/Goldman/Goldman-Regular.ttf"/>
     </GROUP>
     <GROUP id="{29DC4859-EAB7-E7FC-5A1E-A0E7D0F52AD5}" name="Source">
+      <FILE id="Ey6rXh" name="DSP.h" compile="0" resource="0" file="Source/DSP.h"/>
       <FILE id="qB8yqS" name="ProtectYourEars.h" compile="0" resource="0"
             file="Source/ProtectYourEars.h"/>
       <FILE id="lviDKV" name="Parameters.cpp" compile="1" resource="0" file="Source/Parameters.cpp"/>

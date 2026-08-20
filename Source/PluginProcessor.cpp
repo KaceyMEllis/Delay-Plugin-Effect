@@ -155,9 +155,11 @@ void DelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, [[mayb
         float dryL = channelDataL[sample];
         float dryR = channelDataR[sample];
         
+        float mono = (dryL + dryR) * 0.5f;
+        
         //Original code modified to add feedback back into the delay line
-        delayLine.pushSample(0, dryL + feedbackL);
-        delayLine.pushSample(1, dryR + feedbackR);
+        delayLine.pushSample(0, mono*params.panL + feedbackR);
+        delayLine.pushSample(1, mono*params.panR + feedbackL);
         
         float wetL = delayLine.popSample(0);
         float wetR = delayLine.popSample(1);
